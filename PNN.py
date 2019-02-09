@@ -99,7 +99,7 @@ class PNN:
 
         # parameterize inputs
         p = self.parameterize(self.batchX_placeholder)
-        # modeling inputs without one time step together with parameters
+        # modeling inputs together with parameters
         self.ys = []
         for t in range(look_ahead+look_back-1):
             if t == 0:
