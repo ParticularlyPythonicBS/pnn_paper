@@ -276,7 +276,7 @@ class PNN:
         saved_data = {'W': W, 'p_layers': self.p_layers, 'm_layers': self.m_layers, 'p_units': self.p_units,
                       'm_units': self.m_units, 'look_back': self.look_back, 'look_ahead': self.look_ahead,
                       'seed': self.seed, 'batch_size': self.batch_size, 'T': self.T}
-        path = 'NN Models\\' + str(file_name) + '.txt'
+        path = 'NN Models\\' + str(file_name) + '.model'
         with open(path, 'wb') as f:
             pickle.dump(saved_data, f)
 
@@ -284,7 +284,7 @@ class PNN:
     def loadNN(self, file_name=None, T=None, precision64=False):
         if file_name is None:
             file_name = 'temp'
-        path = 'NN Models\\' + str(file_name) + '.txt'
+        path = 'NN Models\\' + str(file_name) + '.model'
         with open(path, 'rb') as f:
             saved_data = pickle.load(f)
         if T is not None:
